@@ -1,0 +1,5 @@
+#!/bin/bash
+CMD="playerctl -s -i firefox"
+if [[ "$($CMD status)" == "Playing" ]]; then
+  echo -e "$($CMD metadata artist) - $($CMD metadata title)"
+fi

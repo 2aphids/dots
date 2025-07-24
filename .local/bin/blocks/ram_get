@@ -1,0 +1,2 @@
+#!/bin/bash
+echo -e "$(free -m | awk '/^Mem:/ {print int($3)" MB"}')"
