@@ -1,0 +1,9 @@
+#!/bin/bash
+id=$(pidof spotify)
+
+if [[ -z $id ]]; then
+	playerctl play-pause
+else
+	playerctl -i firefox play-pause
+fi
+
