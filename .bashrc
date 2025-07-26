@@ -9,6 +9,7 @@ for i in ${HIDDEN_FILES[@]}; do
   HIDDEN_FILES_S="$HIDDEN_FILES_S --hide $i "
 done
 
+alias g="git"
 alias open="xdg-open"
 alias o="open"
 alias cd="z"
