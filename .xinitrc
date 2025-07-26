@@ -1,4 +1,6 @@
 #!/bin/bash
+export PATH=$(find ~/.local/bin -type d -printf "%p:")$PATH
+
 xrdb ~/.xresources
 
 feh --bg-scale ~/pictures/wallpaper.png

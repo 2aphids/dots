@@ -1,6 +1,4 @@
 #!/bin/bash
-export PATH=$(find ~/.local/bin -type d -printf "%p:")$PATH
-
 EDITOR=nvim
 declare -a HIDDEN_FILES=('desktop.ini' '\$RECYCLE.BIN' 'System Volume Information' 'Zomboid' '\*.blend1')
 
@@ -30,6 +28,7 @@ alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 kpid() {
   kill $(pidof $1)
 }
+alias rdwm="kpid dwm;dwm & disown"
 
 eval "$(zoxide init bash)"
 export MANPAGER="nvim +Man!"

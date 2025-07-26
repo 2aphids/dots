@@ -1,7 +1,7 @@
 !! dwm
 
-dwm.font: Liberation Mono
-dwm.dmenufont: Liberation Mono
+dwm.font: Inter:size=10
+dwm.dmenufont: Inter:size=10
 
 dwm.normbgcolor: #222222
 dwm.normbordercolor: #444444
