@@ -28,7 +28,11 @@ alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 kpid() {
   kill $(pidof $1)
 }
-alias rdwm="kpid dwm;dwm & disown"
+
+restart() {
+  kpid $1;$1 & disown
+}
+alias r="restart"
 
 eval "$(zoxide init bash)"
 export MANPAGER="nvim +Man!"
