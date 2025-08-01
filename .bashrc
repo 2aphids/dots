@@ -7,12 +7,13 @@ for i in ${HIDDEN_FILES[@]}; do
 done
 
 alias g="git"
+alias gs="git status"
 alias cd="z"
 alias ..="cd .."
 alias dc="cd"
 alias c="clear"
 alias v="nvim"
-alias ls="ls --color=auto --group-directories-first ${HIDDEN_FILES_S}"
+alias ls="ls -h --color=auto --group-directories-first ${HIDDEN_FILES_S}"
 alias sl="ls"
 alias mv="mv -iv"  # i: prompt before overwrite; v: verbose output
 alias rm="rm -iv"  # i: prompt before; v: verbose output
