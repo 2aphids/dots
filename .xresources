@@ -10,7 +10,7 @@ dwm.selfgcolor: #eeeeee
 
 dwm.borderpx: 2
 
-st.font: Jetbrains Mono:pixelsize=14:antialias=true:autohint=true
+st.font: IosevkaTerm Nerd Font Mono:pixelsize=15:antialias=true:autohint=true
 
 !! st.alpha: 0.8
 !! st.norm1: #000000
