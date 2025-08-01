@@ -1,0 +1,4 @@
+[mgr]
+prepend_keymap = [
+	{ on = "L", run = "open", desc = "Open selected files" },
+]
