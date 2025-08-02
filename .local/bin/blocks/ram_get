@@ -2,12 +2,12 @@
 MEM=$(free -m | awk '/^Mem:/ {print int($3)""}')
 
 COL="\x01"
-if [ $MEM -gt 20000 ]; then
-  COL="\x06"
-elif [ $MEM -gt 12000 ]; then
-  COL="\x05"
-else
-  COL="\x04"
-fi
+# if [ $MEM -gt 20000 ]; then
+#   COL="\x06"
+# elif [ $MEM -gt 12000 ]; then
+#   COL="\x05"
+# else
+#   COL="\x04"
+# fi
 
 echo -e $COL"$MEM MB\x01"
