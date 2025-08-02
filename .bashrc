@@ -20,7 +20,6 @@ alias rm="rm -iv"  # i: prompt before; v: verbose output
 alias pwd="pwd -P" # P: resolve all symlinks
 alias yt="yt-dlp --embed-metadata"
 alias yta="yt -x --audio-format wav"
-
 alias dots="git --git-dir=$HOME/.dots --work-tree=$HOME"
 
 kpid() {
@@ -35,6 +34,14 @@ alias r="restart"
 font() {
   fc-list | grep $1
 }
+
+yzx() { # yazi + zoxide!
+  yazi $(zoxide query $1)
+}
+
+# simply entering a dir name is a valid way to cd into it
+# i.e. "$ cd prj" -> "$ prj"
+shopt -s autocd
 
 eval "$(zoxide init bash)"
 export MANPAGER="nvim +Man!"
