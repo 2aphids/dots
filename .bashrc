@@ -23,6 +23,10 @@ alias yta="yt -x --audio-format wav"
 alias dots="git --git-dir=$HOME/.dots --work-tree=$HOME"
 alias sfetch="neofetch --ascii_distro arch_small"
 
+TODO=~/doc/notes/todo.md
+alias td="cat $TODO"
+alias vtd="v $TODO"
+
 kpid() {
   kill $(pidof $1)
 }
