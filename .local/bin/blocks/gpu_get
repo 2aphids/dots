@@ -1,0 +1,9 @@
+#!/bin/sh
+
+INFO=$(nvidia-smi | sed '10!d')
+
+USAGE=$(echo "$INFO" | cut -d' ' -f42)
+TEMP=$(echo "$INFO" | cut -d' ' -f6)
+VRAM=$(echo "$INFO" | cut -d' ' -f32)
+
+echo -e "GPU $TEMP @ $USAGE, $VRAM"
