@@ -1,0 +1,16 @@
+[init]
+	defaultBranch = main
+[user]
+	email = aphidarium@proton.me
+	name = aphd
+[core]
+	editor = nvim
+[alias]
+  pushall = !git remote | xargs -L1 git push --all
+  patch = apply --reject --whitespace=fix
+  st = status
+  s = status
+  cm = commit -m
+  c = commit -m
+[color]
+	ui = auto
