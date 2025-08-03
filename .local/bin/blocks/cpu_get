@@ -1,0 +1,10 @@
+#!/bin/sh
+
+INFO=$(sensors | sed '3!d')
+
+# thanks https://stackoverflow.com/questions/9229333/how-to-get-overall-cpu-usage-e-g-57-on-linux
+USAGE=$(ps -A -o pcpu | tail -n+2 | paste -sd+ | bc)%
+
+TEMP=$(echo "$INFO" | cut -d'+' -f2 | cut -d. -f1)C
+
+echo -e "CPU $TEMP @ $USAGE"
