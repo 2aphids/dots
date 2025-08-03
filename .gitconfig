@@ -6,11 +6,11 @@
 [core]
 	editor = nvim
 [alias]
-  pushall = !git remote | xargs -L1 git push --all
-  patch = apply --reject --whitespace=fix
-  st = status
-  s = status
-  cm = commit -m
-  c = commit -m
+	pushall = !git remote | xargs -L1 git push --all
+	patch = apply --reject --whitespace=fix
+	st = status
+	s = status
+	cm = commit -m
+	c = commit -m
 [color]
 	ui = auto
