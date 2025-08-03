@@ -9,12 +9,12 @@ done
 alias g="git"
 alias gs="git status"
 alias cd="z"
-alias ..="cd .."
 alias dc="cd"
 alias c="clear"
 alias v="nvim"
 alias ls="ls -h --color=auto --group-directories-first ${HIDDEN_FILES_S}"
 alias sl="ls"
+alias l="ls"
 alias mv="mv -iv"  # i: prompt before overwrite; v: verbose output
 alias rm="rm -iv"  # i: prompt before; v: verbose output
 alias pwd="pwd -P" # P: resolve all symlinks
@@ -38,14 +38,16 @@ font() {
 yzx() { # yazi + zoxide!
   yazi $(zoxide query $1)
 }
+alias yz="yazi"
 
 # simply entering a dir name is a valid way to cd into it
 # i.e. "$ cd prj" -> "$ prj"
+# doesn't work if the dir name is a command
 shopt -s autocd
 
 eval "$(zoxide init bash)"
-export MANPAGER="nvim +Man!"
 
 FG="\e[33m"
 BG="\e[0m"
 export PS1="$BG\u@\h $FG\W$BG \$\e[0m "
+export MANPAGER="nvim +Man!"
