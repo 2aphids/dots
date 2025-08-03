@@ -21,6 +21,7 @@ alias pwd="pwd -P" # P: resolve all symlinks
 alias yt="yt-dlp --embed-metadata"
 alias yta="yt -x --audio-format wav"
 alias dots="git --git-dir=$HOME/.dots --work-tree=$HOME"
+alias sfetch="neofetch --ascii_distro arch_small"
 
 kpid() {
   kill $(pidof $1)
