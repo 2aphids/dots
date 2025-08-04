@@ -10,4 +10,4 @@ COL="\x01"
 #   COL="\x04"
 # fi
 
-echo -e $COL"$MEM MB\x01"
+echo -e $COL"MEM $MEM MB\x01"

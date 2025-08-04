@@ -2,8 +2,8 @@
 
 INFO=$(nvidia-smi | sed '10!d')
 
-USAGE=$(echo "$INFO" | cut -d' ' -f42)
 TEMP=$(echo "$INFO" | cut -d' ' -f6)
-VRAM=$(echo "$INFO" | cut -d' ' -f32)
+USAGE="$(echo "$INFO" | cut -d'%' -f1 | rev | cut -d' ' -f1 | rev)%"
+VRAM="$(echo "$INFO" | cut -d'M' -f1 | rev | cut -d' ' -f1 | rev)MB"
 
 echo -e "GPU $TEMP @ $USAGE, $VRAM"
