@@ -18,6 +18,7 @@ alias l="ls"
 alias mv="mv -iv"  # i: prompt before overwrite; v: verbose output
 alias rm="rm -iv"  # i: prompt before; v: verbose output
 alias pwd="pwd -P" # P: resolve all symlinks
+alias pdf="zathura"
 alias yt="yt-dlp --embed-metadata"
 alias yta="yt -x --audio-format wav"
 alias dots="git --git-dir=$HOME/.dots --work-tree=$HOME"
