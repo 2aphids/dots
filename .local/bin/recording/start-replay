@@ -1,0 +1,4 @@
+#!/bin/sh
+VIDEO_PATH="$(xdg-user-dir VIDEOS)/clips/unprocessed"
+mkdir -p $VIDEO_PATH
+gpu-screen-recorder -r 60 -c mp4 -w screen-direct -a default_output -a default_input -o "$VIDEO_PATH"

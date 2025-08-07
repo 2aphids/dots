@@ -1,0 +1,4 @@
+#!/bin/sh
+VIDEO_PATH="$(xdg-user-dir VIDEOS)"
+mkdir -p $VIDEO_PATH
+gpu-screen-recorder -w screen-direct -a default_output -a default_input -o "$VIDEO_PATH/$(date +%d_%m.%H_%M_%S).mp4"
