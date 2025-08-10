@@ -8,6 +8,7 @@
 [alias]
 	pushall = !git remote | xargs -L1 git push --all
 	patch = apply --reject --whitespace=fix
+	a = add
 	st = status
 	s = status
 	cm = commit -m
