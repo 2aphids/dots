@@ -6,7 +6,8 @@
 [core]
 	editor = nvim
 [alias]
-	pushall = !git remote | xargs -L1 git push --all
+  pushall = !git remote | xargs -L1 git push --all
+  p = pushall
 	patch = apply --reject --whitespace=fix
 	a = add
 	st = status
