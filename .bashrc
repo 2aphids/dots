@@ -23,10 +23,7 @@ alias yt="yt-dlp --embed-metadata"
 alias yta="yt -x --audio-format wav"
 alias dots="git --git-dir=$HOME/.dots --work-tree=$HOME"
 alias sfetch="neofetch --ascii_distro arch_small"
-
-TODO=~/doc/notes/todo.md
-alias td="cat $TODO"
-alias vtd="v $TODO"
+alias vtd="v ~/doc/notes/todo.md"
 
 kpid() {
   kill $(pidof $1)
@@ -46,14 +43,22 @@ yzx() { # yazi + zoxide!
 }
 alias yz="yazi"
 
+# https://medium.com/@GroundControl/better-git-diffs-with-fzf-89083739a9cb
+fdiff() { # fzf + git diff
+  git diff $@ --name-only | fzf -m --ansi --preview "git diff $@ --color=always -- {-1}"
+}
+
 # simply entering a dir name is a valid way to cd into it
 # i.e. "$ cd prj" -> "$ prj"
 # doesn't work if the dir name is a command
 shopt -s autocd
 
-eval "$(zoxide init bash)"
-
 FG="\e[33m"
 BG="\e[0m"
 export PS1="$BG\u@\h $FG\W$BG \$\e[0m "
+
 export MANPAGER="nvim +Man!"
+
+HISTTIMEFORMAT="%d/%m/%y %T "
+
+eval "$(zoxide init bash)"
