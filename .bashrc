@@ -55,7 +55,7 @@ shopt -s autocd
 
 FG="\e[33m"
 BG="\e[0m"
-export PS1="$BG\u@\h $FG\W$BG \$\e[0m "
+export PS1=" $FG\W$BG \$\e[0m "
 
 export MANPAGER="nvim +Man!"
 
