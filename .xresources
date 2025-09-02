@@ -15,32 +15,9 @@ dwm.col_yellow: "#eeff32";
 dwm.col_red: "#d34149";
 dwm.col_white: "#fefeff";
 
-
 dwm.borderpx: 2
 
 st.font: IosevkaTerm Nerd Font Mono:pixelsize=15:antialias=true:autohint=true
-
-!! st.alpha: 0.8
-!! st.norm1: #000000
-!! st.norm2: #cd0000
-!! st.norm3: #00cd00
-!! st.norm4: #cdcd00
-!! st.norm5: #0000ee
-!! st.norm6: #cd00cd
-!! st.norm7: #00cdcd
-!! st.norm8: #e5e5e5
-!! st.bright1: #7f7f7f
-!! st.bright2: #ff0000
-!! st.bright3: #00ff00
-!! st.bright4: #ffff00
-!! st.bright5: #5c5cff
-!! st.bright6: #ff00ff
-!! st.bright7: #00ffff
-!! st.bright8: #ffffff
-
-!! st.foreground: #e5e5e5
-!! st.background: #000000
-!! st.cursorcolor: #e5e5e5
 
 st.alpha: 0.8
 st.norm1: #1d2021
