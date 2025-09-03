@@ -2,3 +2,4 @@
 # and then rename to .not_for_git.sh
 readonly LASTFM_KEY=abc123
 readonly LASTFM_USERNAME=username
+readonly TMDB_KEY=abc123
