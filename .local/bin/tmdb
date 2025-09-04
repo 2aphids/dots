@@ -9,34 +9,23 @@ api() {
      --header 'accept: application/json')
 }
 
-zero_in() {
-  echo $DATA | grep -Po "(?<=\"$1\":).*(?=,\"$2\":)" | grep -Po "(?<=\"$3\")[^\]\}]*" | grep -Po "(?<=\")(.[^\:]*?)(?=\")"
+get_id() {
+  $(echo $(api search/movie?query=$INPUT) | grep -Po '(?<="id":).[^,]*') | cut -d" " -f$1
 }
 
 INPUT=$(echo $1 | tr _ %20)
+TARGET_RELEASE_YEAR=$3
+RELEASE_DATE=0
 
-ID=$(echo $(echo $(api search/movie?query=$INPUT) | grep -Po '(?<="id":).[^,]*') | cut -d" " -f1)
-DATA=$(api movie/$ID)
+# recursively search for movies to match input year ($3)
+i=1
+while [ "$(echo $RELEASE_DATE | cut -d'-' -f1)" != "$TARGET_RELEASE_YEAR" ]; do
+  ID=$(echo $(echo $(api search/movie?query=$INPUT) | grep -Po '(?<="id":).[^,]*') | cut -d" " -f$i)
+  RELEASE_DATE=$(echo $(echo $(api movie/$ID) | grep -Po '(?<=release_date":").[^\"]*'))
+  if [[ -z "$TARGET_RELEASE_DATE" ]]; then
+     TARGET_RELEASE_YEAR="$(echo $RELEASE_DATE | cut -d'-' -f1)"
+  fi
+  ((i++))
+done
 
-GENRES=$(echo $(zero_in genres homepage name) | awk '{print tolower($0)}')
-COUNTRY=$(echo $(zero_in imdb_id original_language origin_country) | awk '{print tolower($0)}')
-RELEASE_DATE=$(echo $(zero_in production_countries revenue release_date))
-POSTER=$(echo https://image.tmdb.org/t/p/w780$(zero_in popularity production_companies poster_path))
-POPULARITY=$(echo $DATA | grep -Po '(?<="vote_average":).[^,]*')
-
-echo "---
-date: $2
-release date: $RELEASE_DATE
-country: $COUNTRY
-tags:
-  - $(echo $GENRES | cut -d' ' -f1)
-  - $(echo $GENRES | cut -d' ' -f2)
-  - $(echo $GENRES | cut -d' ' -f3)
-tmdb: $(echo https://www.themoviedb.org/movie/$ID)
-tmdb_average_vote: $POPULARITY
-cover: $POSTER
-dont display:
-  - tags
----
-\`%PROPERTIES\`
-"
+tmdbid $ID

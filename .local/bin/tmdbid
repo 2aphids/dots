@@ -1,0 +1,45 @@
+#!/bin/sh
+
+source ~/.not_for_git.sh
+
+api() {
+  echo $(curl -s --request GET \
+     --url https://api.themoviedb.org/3/$1 \
+     --header "Authorization: Bearer $TMDB_KEY" \
+     --header 'accept: application/json')
+}
+
+zero_in() {
+  echo $DATA | grep -Po "(?<=\"$1\":).*(?=,\"$2\":)" | grep -Po "(?<=\"$3\")[^\]\}]*" | grep -Po "(?<=\")(.[^\:]*?)(?=\")"
+}
+
+DATA=$(api movie/$1)
+
+RELEASE_DATE=$(echo $(zero_in production_countries revenue release_date))
+GENRES=$(echo $(zero_in genres homepage name) | awk '{print tolower($0)}')
+COUNTRY=$(echo $(zero_in imdb_id original_language origin_country) | awk '{print tolower($0)}')
+POSTER=$(echo https://image.tmdb.org/t/p/w780$(zero_in popularity production_companies poster_path))
+POPULARITY=$(echo $DATA | grep -Po '(?<="vote_average":).[^,]*')
+
+## declare an array variable
+declare -a array=($GENRES)
+
+echo "---
+date: $2
+release date: $RELEASE_DATE
+country: $COUNTRY
+tags:
+$(
+  for (( i=0; i<${#array[@]}; i++ ));
+  do
+    echo "  - ${array[$i]}"
+  done
+)
+tmdb: $(echo https://www.themoviedb.org/movie/$ID)
+tmdb_average_vote: $POPULARITY
+cover: $POSTER
+dont display:
+  - tags
+---
+\`%PROPERTIES\`
+"
