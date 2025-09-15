@@ -22,8 +22,7 @@ alias pdf="zathura"
 alias yt="yt-dlp --embed-metadata"
 alias yta="yt -x --audio-format wav"
 alias dots="git --git-dir=$HOME/.dots --work-tree=$HOME"
-alias sfetch="neofetch --ascii_distro arch_small"
-alias vtd="v ~/doc/notes/todo.md"
+alias yz="yazi"
 
 kpid() {
   kill $(pidof $1)
@@ -32,7 +31,6 @@ kpid() {
 restart() {
   kpid $1;$1 & disown
 }
-alias r="restart"
 
 font() {
   fc-list | grep $1
@@ -41,17 +39,11 @@ font() {
 yzx() { # yazi + zoxide!
   yazi $(zoxide query $1)
 }
-alias yz="yazi"
 
 # https://medium.com/@GroundControl/better-git-diffs-with-fzf-89083739a9cb
 fdiff() { # fzf + git diff
   git diff $@ --name-only | fzf -m --ansi --preview "git diff $@ --color=always -- {-1}"
 }
-
-# simply entering a dir name is a valid way to cd into it
-# i.e. "$ cd prj" -> "$ prj"
-# doesn't work if the dir name is a command
-shopt -s autocd
 
 FG="\e[33m"
 BG="\e[0m"
