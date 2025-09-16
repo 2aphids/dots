@@ -23,6 +23,9 @@ alias yt="yt-dlp --embed-metadata"
 alias yta="yt -x --audio-format wav"
 alias dots="git --git-dir=$HOME/.dots --work-tree=$HOME"
 alias yz="yazi"
+alias pq="pacman -Qi"
+alias pr="sudo pacman -Rns"
+alias ps="sudo pacman -S"
 
 kpid() {
   kill $(pidof $1)
