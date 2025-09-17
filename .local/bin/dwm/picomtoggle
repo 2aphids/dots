@@ -1,10 +1,9 @@
 #!/bin/bash
 pid=$(pidof picom)
-
 if [ -z "$pid" ]; then
   exec picom & disown
-  notify-send "Picom is ON"
+  dunstify "Picom is ON" --replace="1435"
 else
   kill "$pid"
-  notify-send "Picom is OFF"
+  dunstify "Picom is OFF" --replace="1435"
 fi
