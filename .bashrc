@@ -10,6 +10,7 @@ alias g="git"
 alias gs="git status"
 alias cd="z"
 alias dc="cd"
+alias ..="cd .."
 alias c="clear"
 alias v="nvim"
 alias ls="ls -h --color=auto --group-directories-first ${HIDDEN_FILES_S}"
@@ -34,6 +35,7 @@ kpid() {
 restart() {
   kpid $1;$1 & disown
 }
+alias r="restart"
 
 font() {
   fc-list | grep $1
