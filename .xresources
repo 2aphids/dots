@@ -1,17 +1,17 @@
-dwm.font: Fira Code:size=10
+dwm.font: IBM Plex Mono:size=10
 
-dwm.normbgcolor: #222222
-dwm.normbordercolor: #444444
-dwm.normfgcolor: #bbbbbb
+dwm.normbgcolor: #fefeff
+dwm.normbordercolor: #111111
+dwm.normfgcolor: #111111
 
-dwm.selfgcolor: #eeeeee
-dwm.selbordercolor: #005577
-dwm.selbgcolor: #005577
+dwm.selfgcolor: #111111
+dwm.selbordercolor: #fabd2f
+dwm.selbgcolor: #fefeff
 
 dwm.col_black: "#111111";
 dwm.col_blue: "#005577";
 dwm.col_green: "#73d357";
-dwm.col_yellow: "#eeff32";
+dwm.col_yellow: "#fabd2f";
 dwm.col_red: "#d34149";
 dwm.col_white: "#fefeff";
 
