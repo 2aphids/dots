@@ -1,12 +1,12 @@
 dwm.font: IBM Plex Mono:size=10
 
-dwm.normbgcolor: #fefeff
-dwm.normbordercolor: #111111
-dwm.normfgcolor: #111111
+dwm.normfgcolor: #ebdbb2
+dwm.normbordercolor: #282828
+dwm.normbgcolor: #282828
 
-dwm.selfgcolor: #111111
+dwm.selfgcolor: #282828
 dwm.selbordercolor: #fabd2f
-dwm.selbgcolor: #fefeff
+dwm.selbgcolor: #b8bb26
 
 dwm.col_black: "#111111";
 dwm.col_blue: "#005577";
