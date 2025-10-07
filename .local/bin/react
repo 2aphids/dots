@@ -1,0 +1,3 @@
+#!/bin/sh
+DIR=~/pic/react
+ls $DIR/*.png $DIR/*.jpg $DIR/*.jpeg | cpimg $DIR/$(dmenu -fixed-num-lines 8)
