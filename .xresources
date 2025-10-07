@@ -17,7 +17,7 @@ dwm.col_white: "#fefeff";
 
 dwm.borderpx: 2
 
-st.font: IosevkaTerm Nerd Font Mono:pixelsize=15:antialias=true:autohint=true
+st.font: IBM Plex Mono:pixelsize=15:antialias=true:autohint=true
 
 st.alpha: 0.8
 st.norm1: #1d2021
