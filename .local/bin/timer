@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+LENGTH=$1
+for((i=1;i++<LENGTH;)){
+  PROG=$(echo "scale=2;($i/$LENGTH)*100" | bc);
+  dunstify "$(echo "scale=2;$i" | bc)/$LENGTH $PROG% $2" -h int:value:$PROG --replace=5135;
+  sleep 1
+}

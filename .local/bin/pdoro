@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+timer $(((25*60))) WORK
+timer $(((5 *60))) BREAK
+timer $(((25*60))) WORK
+timer $(((15*60))) BREAK
