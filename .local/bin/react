@@ -1,3 +1,19 @@
 #!/bin/sh
 DIR=~/pic/react
-ls $DIR/*.png $DIR/*.jpg $DIR/*.jpeg | cpimg $DIR/$(dmenu -fixed-num-lines 8)
+pushd $DIR
+
+IMG=$(
+  for a in $(ls */*.png */*.jpg */*.txt *.png *.jpg *.txt); do
+    echo -en "$a\n"
+  done | dmenu -c -vi -l 10
+)
+
+FORMAT=$(echo $IMG | rev | cut -d. -f1 | rev)
+MIME=image/png
+if [ $FORMAT == txt ]; then
+  MIME=text/plain
+fi
+
+xclip -selection clipboard -t $MIME -i $DIR/$IMG
+
+popd
