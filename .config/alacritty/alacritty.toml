@@ -1,0 +1,10 @@
+[window]
+decorations="Transparent"
+opacity=0.85
+
+[font]
+normal={ family="IBM Plex Mono" }
+
+[colors.primary]
+foreground="#ebdbb2"
+background="#282828"
